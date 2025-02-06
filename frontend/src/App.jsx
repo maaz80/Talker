@@ -12,6 +12,7 @@ function App() {
     <div>
       <Navbar/>
      <Routes>
+      Just checking github
       <Route path='/' element={<Home/>}/>
       <Route path='/signup' element={<Signup/>}/>
       <Route path='/setting' element={<Setting/>}/>
