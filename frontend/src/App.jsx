@@ -9,8 +9,10 @@ import Login from './pages/Login'
 import { useAuthStore } from './store/useAuthStore'
 import { Loader } from 'lucide-react'
 import { Toaster } from 'react-hot-toast'
+import { useThemeStore } from './store/useThemeStore'
 function App() {
   const { authUser, checkAuth, isCheckingAuth } = useAuthStore();
+  const { theme } = useThemeStore()
   useEffect(() => {
     checkAuth()
   }, [checkAuth])
@@ -21,7 +23,7 @@ function App() {
     <Loader className='size-10 animate-spin' />
   </div>
   return (
-    <div>
+    <div data-theme={theme}>
       <Navbar />
       <Routes>
         <Route path='/' element={authUser ? <Home /> : <Login />} />
